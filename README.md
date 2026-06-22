@@ -1,6 +1,7 @@
 # Claude Jugaadu Dev Skills 🛠️
 
 > *Jugaadu* (जुगाड़ू) — Hindi for clever, resourceful, hacky-in-the-best-way.
+> *Jugaadu* (ಜುಗಾಡು) — Kannada for the same vibe. Because jugaad has no language barrier.
 
 A collection of Claude Code skills, AI-powered dev hacks, workflow automations, and productivity recipes.
 
