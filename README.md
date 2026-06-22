@@ -8,10 +8,28 @@ A collection of Claude Code skills, AI-powered dev hacks, workflow automations, 
 
 ## Skills
 
+### 🔬 Research & Writing
 | Skill | What it does |
 |-------|-------------|
-| [`/paper-review`](skills/paper-review/) | Senior IEEE-level peer reviewer. Factual integrity audits, originality checks, calibrated scoring. Covers NeurIPS, ICML, IEEE S&P, USENIX Security. |
-| [`/pradyoth-writing`](skills/pradyoth-writing/) | Ghostwrite in Pradyoth's voice — LinkedIn posts, blog posts, talk abstracts, Twitter threads. No corporate jargon, strong hooks, practitioner tone. |
+| [`/paper-review`](skills/paper-review/) | Senior IEEE-level peer reviewer. Factual integrity audits, originality checks, calibrated scoring. NeurIPS, ICML, IEEE S&P, USENIX Security. |
+| [`/pradyoth-writing`](skills/pradyoth-writing/) | Ghostwrite in Pradyoth's voice — LinkedIn, blogs, talk abstracts, Twitter threads. No corporate jargon, strong hooks, practitioner tone. |
+
+### 🎯 Strategy & Mindset
+| Skill | What it does |
+|-------|-------------|
+| [`/harvey-specter`](skills/harvey-specter/) | Think like the best closer in town. Predatory strategic thinking for negotiations, career moves, salary talks, power plays, and any situation where you need to WIN. Board reads, leverage maps, exact scripts, counter-plays. |
+
+### ⚡ Token-Efficient Dev Skills
+| Skill | What it does | Tokens saved |
+|-------|-------------|-------------|
+| [`/lazy-commit`](skills/lazy-commit/) | Read diff → generate commit message → commit. One shot, zero chat. | No back-and-forth |
+| [`/tldr-error`](skills/tldr-error/) | Paste error → 2-line diagnosis + fix. No lecture. | ~90% shorter responses |
+| [`/scaffold`](skills/scaffold/) | One-liner → production boilerplate. Detects your stack automatically. | Replaces 10 min of typing |
+| [`/quick-test`](skills/quick-test/) | Point at a function → get a complete test file. No narration. | Tests are 80% boilerplate |
+| [`/pr-desc`](skills/pr-desc/) | Branch diff → PR title + description. Creates the PR if you want. | Never write a PR desc again |
+| [`/unfuck`](skills/unfuck/) | Something broke. Reads errors + recent changes → finds root cause → fixes it. | The "just fix it" button |
+| [`/dep-audit`](skills/dep-audit/) | Audit deps for vulnerabilities, outdated packages, unused imports. Shell-first — near zero AI tokens. | Pure CLI, AI only summarizes |
+| [`/rename-symbol`](skills/rename-symbol/) | Rename a variable/function across all files. Scope-aware, smarter than sed. | One command vs. manual find-replace |
 
 ## What's here
 
