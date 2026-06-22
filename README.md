@@ -1,6 +1,7 @@
 # Claude Jugaadu Dev Skills 🛠️
 
 > *Jugaadu* (जुगाड़ू) — Hindi for clever, resourceful, hacky-in-the-best-way.
+
 > *Jugaadu* (ಜುಗಾಡು) — Kannada for the same vibe. Because jugaad has no language barrier.
 
 A collection of Claude Code skills, AI-powered dev hacks, workflow automations, and productivity recipes.
@@ -9,7 +10,6 @@ A collection of Claude Code skills, AI-powered dev hacks, workflow automations, 
 
 | Skill | What it does |
 |-------|-------------|
-| [`/ai-red-team`](skills/ai-red-team/) | Full AI/ML security red teaming assistant — recon, payload gen, attack planning, bug bounty report drafting. Built for serious adversarial research. |
 | [`/paper-review`](skills/paper-review/) | Senior IEEE-level peer reviewer. Factual integrity audits, originality checks, calibrated scoring. Covers NeurIPS, ICML, IEEE S&P, USENIX Security. |
 | [`/pradyoth-writing`](skills/pradyoth-writing/) | Ghostwrite in Pradyoth's voice — LinkedIn posts, blog posts, talk abstracts, Twitter threads. No corporate jargon, strong hooks, practitioner tone. |
 
