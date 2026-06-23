@@ -8,6 +8,11 @@ A collection of Claude Code skills, AI-powered dev hacks, workflow automations, 
 
 ## Skills
 
+### 🧠 Master Skill
+| Skill | What it does |
+|-------|-------------|
+| [`/jugaadu`](skills/jugaadu/) | The brain. Detects what you need and auto-routes to the right skill — or chains multiple skills in one shot. Say "fix this and commit" and it runs `/unfuck` → `/lazy-commit`. No menus, no questions. |
+
 ### 🔬 Research & Writing
 | Skill | What it does |
 |-------|-------------|
