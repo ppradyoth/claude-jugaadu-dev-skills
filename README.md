@@ -88,6 +88,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 |-------|-------------|-------------|
 | [`/lazy-commit`](skills/lazy-commit/) | Read diff → generate commit message → commit. One shot, zero chat. | No back-and-forth |
 | [`/changelog`](skills/changelog/) | Git history between two refs → grouped, reader-friendly release notes. Git does the work; AI just phrases it. | Pure CLI, AI only groups |
+| [`/standup`](skills/standup/) | Your daily standup, rebuilt from the commits you actually made. Yesterday / Today / Blockers — grounded in git, never invented. | Git remembers; AI only phrases |
 | [`/tldr-error`](skills/tldr-error/) | Paste error → 2-line diagnosis + fix. No lecture. | ~90% shorter responses |
 | [`/scaffold`](skills/scaffold/) | One-liner → production boilerplate. Detects your stack automatically. | Replaces 10 min of typing |
 | [`/quick-test`](skills/quick-test/) | Point at a function → get a complete test file. No narration. | Tests are 80% boilerplate |
