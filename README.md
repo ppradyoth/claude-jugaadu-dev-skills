@@ -95,6 +95,8 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | [`/pr-desc`](skills/pr-desc/) | Branch diff → PR title + description. Creates the PR if you want. | Never write a PR desc again |
 | [`/unfuck`](skills/unfuck/) | Something broke. Reads errors + recent changes → finds root cause → fixes it. | The "just fix it" button |
 | [`/rename-symbol`](skills/rename-symbol/) | Rename a variable/function across all files. Scope-aware, smarter than `sed`. | One command vs. manual find-replace |
+| [`/explain`](skills/explain/) | Point at a function, file, regex, or gnarly one-liner → plain-English explanation, top-down. Reads the real code; never guesses from the name. | Purpose first, detail only as deep as it needs |
+| [`/bisect`](skills/bisect/) | "When did this break?" → drives `git bisect` to the exact culprit commit. Automated with a test command, guided without one. | `log2(N)` steps, not N diffs |
 
 ### 🔬 Research & writing
 | Skill | What it does |
@@ -114,6 +116,7 @@ Step-by-step workflows that chain skills (or run bare with plain shell).
 | Recipe | What it does |
 |--------|-------------|
 | [Pre-push safety net](recipes/pre-push-safety-net.md) | A two-minute ritual before every push: scan for secrets, run tests, audit new deps, write the PR. Catches the embarrassing stuff before it leaves your laptop. |
+| [Hunt a regression](recipes/hunt-a-regression.md) | It worked last week, now it doesn't. Bisect to the exact culprit commit, understand it, fix the root cause, add the test, ship the PR. |
 
 ## Prompt templates
 
