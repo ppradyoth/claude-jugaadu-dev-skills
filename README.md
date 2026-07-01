@@ -88,6 +88,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 |-------|-------------|-------------|
 | [`/lazy-commit`](skills/lazy-commit/) | Read diff → generate commit message → commit. One shot, zero chat. | No back-and-forth |
 | [`/commit-split`](skills/commit-split/) | One messy working tree → several clean, one-concern commits. Groups hunks by intent (feature/fix/refactor/formatting) and stages each with `git add -p`. Stashes a backup first, never loses a change. | Untangle once, review forever |
+| [`/squash`](skills/squash/) | The inverse of `/commit-split`: many junk commits (`wip`, `oops`, `fix test`) → one clean commit (or a few logical ones) before merge. Non-interactive `git reset --soft` to the merge-base — no `rebase -i`, zero conflicts. Backs up the branch, proves the tree is unchanged, pushes with `--force-with-lease`. | Collapse in one step, no rebase marathon |
 | [`/changelog`](skills/changelog/) | Git history between two refs → grouped, reader-friendly release notes. Git does the work; AI just phrases it. | Pure CLI, AI only groups |
 | [`/standup`](skills/standup/) | Your daily standup, rebuilt from the commits you actually made. Yesterday / Today / Blockers — grounded in git, never invented. | Git remembers; AI only phrases |
 | [`/tldr-error`](skills/tldr-error/) | Paste error → 2-line diagnosis + fix. No lecture. | ~90% shorter responses |
