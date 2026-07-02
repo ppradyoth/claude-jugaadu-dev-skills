@@ -24,6 +24,7 @@ fit, pick the most specific one.
 | Signal | Route to | Why |
 |--------|----------|-----|
 | User pastes an error, stack trace, exception | **`/tldr-error`** | They want the fix, not a conversation |
+| User pastes a whole CI/build log, "why did CI fail", "pipeline is red", "the build broke" | **`/triage`** | Find the one real failure in the noise, ranked causes + first command |
 | "commit", "commit this", staged changes exist | **`/lazy-commit`** | One-shot commit |
 | "test this", "write tests", "cover this" | **`/quick-test`** | Generate tests, no chat |
 | "scaffold", "create a new", "boilerplate", "stub out" | **`/scaffold`** | Generate boilerplate from one-liner |
@@ -58,6 +59,7 @@ Some tasks need more than one skill. Chain them:
 | "fix, test, and PR" | **`/unfuck`** → **`/quick-test`** → **`/lazy-commit`** → **`/pr-desc`** |
 | "rename X and make sure nothing broke" | **`/rename-symbol`** → **`/quick-test`** (run existing tests) |
 | "audit and fix deps" | **`/dep-audit`** → **`/unfuck`** (if audit finds breaking issues) |
+| "figure out why CI failed and fix it" | **`/triage`** (find the real failure) → **`/unfuck`** (fix it) |
 
 When chaining, output a one-line header for each skill as it activates:
 ```
