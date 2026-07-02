@@ -92,6 +92,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | [`/changelog`](skills/changelog/) | Git history between two refs → grouped, reader-friendly release notes. Git does the work; AI just phrases it. | Pure CLI, AI only groups |
 | [`/standup`](skills/standup/) | Your daily standup, rebuilt from the commits you actually made. Yesterday / Today / Blockers — grounded in git, never invented. | Git remembers; AI only phrases |
 | [`/tldr-error`](skills/tldr-error/) | Paste error → 2-line diagnosis + fix. No lecture. | ~90% shorter responses |
+| [`/triage`](skills/triage/) | A red CI job and a 2,000-line log → the one real failure (not the cascade), ranked causes, and the single command to run first. Reads to the root cause; quotes the log, never guesses. The step up from `/tldr-error` when the error is buried in noise. | Find line one, not line one hundred |
 | [`/scaffold`](skills/scaffold/) | One-liner → production boilerplate. Detects your stack automatically. | Replaces 10 min of typing |
 | [`/quick-test`](skills/quick-test/) | Point at a function → get a complete test file. No narration. | Tests are 80% boilerplate |
 | [`/pr-desc`](skills/pr-desc/) | Branch diff → PR title + description. Creates the PR if you want. | Never write a PR desc again |
