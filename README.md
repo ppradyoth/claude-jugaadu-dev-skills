@@ -95,6 +95,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | [`/triage`](skills/triage/) | A red CI job and a 2,000-line log → the one real failure (not the cascade), ranked causes, and the single command to run first. Reads to the root cause; quotes the log, never guesses. The step up from `/tldr-error` when the error is buried in noise. | Find line one, not line one hundred |
 | [`/scaffold`](skills/scaffold/) | One-liner → production boilerplate. Detects your stack automatically. | Replaces 10 min of typing |
 | [`/quick-test`](skills/quick-test/) | Point at a function → get a complete test file. No narration. | Tests are 80% boilerplate |
+| [`/nit`](skills/nit/) | Self-review your own diff before the reviewer does. Flags the embarrassing stuff — a leftover `console.log`, a `describe.only` that quietly disables CI, commented-out code, a survived merge marker, a committed `.env`. Added lines only; flags, never fixes. Security is `/secure-diff`'s job. | One glance saves a review round |
 | [`/pr-desc`](skills/pr-desc/) | Branch diff → PR title + description. Creates the PR if you want. | Never write a PR desc again |
 | [`/unfuck`](skills/unfuck/) | Something broke. Reads errors + recent changes → finds root cause → fixes it. | The "just fix it" button |
 | [`/rename-symbol`](skills/rename-symbol/) | Rename a variable/function across all files. Scope-aware, smarter than `sed`. | One command vs. manual find-replace |
