@@ -29,6 +29,7 @@ fit, pick the most specific one.
 | "test this", "write tests", "cover this" | **`/quick-test`** | Generate tests, no chat |
 | "scaffold", "create a new", "boilerplate", "stub out" | **`/scaffold`** | Generate boilerplate from one-liner |
 | "self review", "check before I push", "anything dumb in here", "did I leave anything", "nit" | **`/nit`** | Flag debug leftovers, `.only` tests, merge markers, stray files — added lines only |
+| "ready to push?", "pre-push", "final check", "ship check", "am I good to push" | **`/pre-push`** | One go/no-go gate: /nit → /secure-diff → tests, fail-fast, single verdict |
 | "PR", "pull request", "pr desc", "create pr" | **`/pr-desc`** | PR title + description from diff |
 | "rename", "refactor name", "change name" | **`/rename-symbol`** | Scope-aware rename across files |
 | "audit deps", "check dependencies", "outdated", "vulnerabilities" | **`/dep-audit`** | Shell-first dependency audit |
@@ -58,7 +59,8 @@ Some tasks need more than one skill. Chain them:
 | "write tests and commit" | **`/quick-test`** → **`/lazy-commit`** |
 | "scaffold a new endpoint with tests" | **`/scaffold`** → **`/quick-test`** |
 | "fix, test, and PR" | **`/unfuck`** → **`/quick-test`** → **`/lazy-commit`** → **`/pr-desc`** |
-| "clean this up and commit" / "ready to push?" | **`/nit`** (catch leftovers) → **`/secure-diff`** (secrets) → **`/lazy-commit`** |
+| "clean this up and commit" | **`/nit`** (catch leftovers) → **`/secure-diff`** (secrets) → **`/lazy-commit`** |
+| "ready to push?" / "final check before I ship" | **`/pre-push`** (one gate: /nit → /secure-diff → tests) → **`/lazy-commit`** → **`/pr-desc`** |
 | "rename X and make sure nothing broke" | **`/rename-symbol`** → **`/quick-test`** (run existing tests) |
 | "audit and fix deps" | **`/dep-audit`** → **`/unfuck`** (if audit finds breaking issues) |
 | "figure out why CI failed and fix it" | **`/triage`** (find the real failure) → **`/unfuck`** (fix it) |
