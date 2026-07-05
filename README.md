@@ -100,6 +100,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | [`/pr-desc`](skills/pr-desc/) | Branch diff → PR title + description. Creates the PR if you want. | Never write a PR desc again |
 | [`/unfuck`](skills/unfuck/) | Something broke. Reads errors + recent changes → finds root cause → fixes it. | The "just fix it" button |
 | [`/rename-symbol`](skills/rename-symbol/) | Rename a variable/function across all files. Scope-aware, smarter than `sed`. | One command vs. manual find-replace |
+| [`/orient`](skills/orient/) | Just cloned an unfamiliar repo? One-pass map — what it is, how to run it, how to test it, where the code lives, what's active. Reads manifests + CI (not the stale README); every command traces to a real script. `/explain` zoomed out. | One screen, then you're working — not spelunking |
 | [`/explain`](skills/explain/) | Point at a function, file, regex, or gnarly one-liner → plain-English explanation, top-down. Reads the real code; never guesses from the name. | Purpose first, detail only as deep as it needs |
 | [`/why`](skills/why/) | "Why is this line here? Safe to delete?" → chains `git blame` → the commit → the PR/issue to recover the original intent. Reads history, not the code; says so when the trail goes cold. | The reason lives in git, not the file |
 | [`/bisect`](skills/bisect/) | "When did this break?" → drives `git bisect` to the exact culprit commit. Automated with a test command, guided without one. | `log2(N)` steps, not N diffs |
