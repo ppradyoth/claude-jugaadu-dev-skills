@@ -31,6 +31,7 @@ fit, pick the most specific one.
 | "self review", "check before I push", "anything dumb in here", "did I leave anything", "nit" | **`/nit`** | Flag debug leftovers, `.only` tests, merge markers, stray files — added lines only |
 | "ready to push?", "pre-push", "final check", "ship check", "am I good to push" | **`/pre-push`** | One go/no-go gate: /nit → /secure-diff → tests, fail-fast, single verdict |
 | "PR", "pull request", "pr desc", "create pr" | **`/pr-desc`** | PR title + description from diff |
+| "orient me", "what is this repo", "understand this codebase", "just cloned this", "where do I start", "lay of the land", "onboard me" | **`/orient`** | One-screen repo map: what/run/test/layout, before you spelunk |
 | "rename", "refactor name", "change name" | **`/rename-symbol`** | Scope-aware rename across files |
 | "audit deps", "check dependencies", "outdated", "vulnerabilities" | **`/dep-audit`** | Shell-first dependency audit |
 | "broken", "not working", "was working before", "wtf", "help", frustration + error | **`/unfuck`** | Diagnose and fix |
@@ -48,6 +49,7 @@ fit, pick the most specific one.
 | User asks about a job offer, comp package, or counter-offer | **`/harvey-specter`** |
 | User asks to write something public-facing | **`/pradyoth-writing`** |
 | User starts a new file from scratch in an existing project | **`/scaffold`** |
+| User is clearly new to the repo — asks broad "how does this work?" / "where is X?" before any specific task | **`/orient`** (map first) → then the specific skill |
 
 ### Chaining (multiple skills in sequence)
 
@@ -64,6 +66,7 @@ Some tasks need more than one skill. Chain them:
 | "rename X and make sure nothing broke" | **`/rename-symbol`** → **`/quick-test`** (run existing tests) |
 | "audit and fix deps" | **`/dep-audit`** → **`/unfuck`** (if audit finds breaking issues) |
 | "figure out why CI failed and fix it" | **`/triage`** (find the real failure) → **`/unfuck`** (fix it) |
+| "I just cloned this, help me make a change" | **`/orient`** (map the repo) → **`/explain`** (the entry point) → the task |
 
 When chaining, output a one-line header for each skill as it activates:
 ```
