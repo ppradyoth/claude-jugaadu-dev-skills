@@ -81,6 +81,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | Skill | What it does |
 |-------|-------------|
 | [`/secure-diff`](skills/secure-diff/) | Fast security pass over the diff you're about to push. Secrets, injection sinks, and the AI-specific leaks classic scanners miss. Built by someone who red-teams AI systems for a living. |
+| [`/prompt-injection-scan`](skills/prompt-injection-scan/) | Repo-wide hunt for the #1 LLM bug (OWASP LLM01): untrusted input reaching a model prompt with no guardrail. Greps the sinks, traces the taint, tells you which are real. Catches indirect injection — poisoned RAG docs, tool results — that most scanners miss. `/secure-diff` for a diff; this for the whole codebase. |
 | [`/dep-audit`](skills/dep-audit/) | Audit deps for vulnerabilities, outdated packages, and unused imports. Shell-first — CLI does the checking, AI only summarizes. Near-zero tokens. |
 
 ### ⚡ Token-efficient dev skills
