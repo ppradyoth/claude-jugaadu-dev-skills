@@ -34,6 +34,7 @@ fit, pick the most specific one.
 | "orient me", "what is this repo", "understand this codebase", "just cloned this", "where do I start", "lay of the land", "onboard me" | **`/orient`** | One-screen repo map: what/run/test/layout, before you spelunk |
 | "rename", "refactor name", "change name" | **`/rename-symbol`** | Scope-aware rename across files |
 | "audit deps", "check dependencies", "outdated", "vulnerabilities" | **`/dep-audit`** | Shell-first dependency audit |
+| "find the todos", "what's left", "todo sweep", "any FIXMEs", "tech debt inventory", "what did we leave unfinished" | **`/todo`** | Whole-repo TODO/FIXME/HACK sweep, aged by git blame, ranked into a worklist |
 | "broken", "not working", "was working before", "wtf", "help", frustration + error | **`/unfuck`** | Diagnose and fix |
 | "review paper", "peer review", "is this publishable", shares a .pdf/.tex paper | **`/paper-review`** | IEEE-level peer review |
 | "write a post", "LinkedIn", "blog", "draft", "write like me", "my voice" | **`/pradyoth-writing`** | Ghostwrite in Pradyoth's voice |
