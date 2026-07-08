@@ -108,6 +108,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | [`/bisect`](skills/bisect/) | "When did this break?" → drives `git bisect` to the exact culprit commit. Automated with a test command, guided without one. | `log2(N)` steps, not N diffs |
 | [`/oops`](skills/oops/) | Botched a git command? Reads `git reflog` to find your last-good state and walks back to it safely — bad reset, wrong-branch commit, deleted branch, mangled rebase, accidental `--amend`. | Reflog is a fact, not a guess |
 | [`/conflict`](skills/conflict/) | Merge/rebase stopped with `CONFLICT`? Reads both sides' history per hunk, keeps both changes when they're compatible, asks before dropping a fix, sweeps leftover markers, and verifies before `--continue`. Knows ours/theirs flips in a rebase. | Resolve on merits, never coin-flip |
+| [`/branch-cleanup`](skills/branch-cleanup/) | Forty local branches, six that matter? Fetch-prunes, then deletes only the provably-done ones — merged into trunk, plus the `[gone]` branches whose squash-merged PR deleted its remote (the case `--merged` can't see). Safe by default (`-d`, never `-D`); current and default branch always protected; unmerged work left alone. | Git already knows which are done — this reads it |
 
 ### 🔬 Research & writing
 | Skill | What it does |
