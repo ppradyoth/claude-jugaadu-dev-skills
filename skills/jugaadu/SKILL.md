@@ -35,6 +35,7 @@ fit, pick the most specific one.
 | "rename", "refactor name", "change name" | **`/rename-symbol`** | Scope-aware rename across files |
 | "audit deps", "check dependencies", "outdated", "vulnerabilities" | **`/dep-audit`** | Shell-first dependency audit |
 | "find the todos", "what's left", "todo sweep", "any FIXMEs", "tech debt inventory", "what did we leave unfinished" | **`/todo`** | Whole-repo TODO/FIXME/HACK sweep, aged by git blame, ranked into a worklist |
+| "clean up branches", "delete merged branches", "prune branches", "my branch list is a mess", "which branches can I delete" | **`/branch-cleanup`** | Fetch-prune, then safely delete merged + `[gone]` local branches; protects current/default |
 | "broken", "not working", "was working before", "wtf", "help", frustration + error | **`/unfuck`** | Diagnose and fix |
 | "review paper", "peer review", "is this publishable", shares a .pdf/.tex paper | **`/paper-review`** | IEEE-level peer review |
 | "write a post", "LinkedIn", "blog", "draft", "write like me", "my voice" | **`/pradyoth-writing`** | Ghostwrite in Pradyoth's voice |
