@@ -83,6 +83,7 @@ That's it. No API keys, no install step, no dependencies. The skill is the file.
 | [`/secure-diff`](skills/secure-diff/) | Fast security pass over the diff you're about to push. Secrets, injection sinks, and the AI-specific leaks classic scanners miss. Built by someone who red-teams AI systems for a living. |
 | [`/prompt-injection-scan`](skills/prompt-injection-scan/) | Repo-wide hunt for the #1 LLM bug (OWASP LLM01): untrusted input reaching a model prompt with no guardrail. Greps the sinks, traces the taint, tells you which are real. Catches indirect injection — poisoned RAG docs, tool results — that most scanners miss. `/secure-diff` for a diff; this for the whole codebase. |
 | [`/dep-audit`](skills/dep-audit/) | Audit deps for vulnerabilities, outdated packages, and unused imports. Shell-first — CLI does the checking, AI only summarizes. Near-zero tokens. |
+| [`/untrack`](skills/untrack/) | Committed a `.env`? `.gitignore` won't help — it only ignores files git *isn't already tracking*. Finds tracked files that should never have been (secrets, `node_modules/`, build output, `.DS_Store`), `git rm --cached`s them (keeps your local copy), and ignores the pattern. Loud about the one that matters: an untrack doesn't un-leak a pushed secret — rotate it. |
 
 ### ⚡ Token-efficient dev skills
 | Skill | What it does | Why it's lean |

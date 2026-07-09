@@ -36,6 +36,7 @@ fit, pick the most specific one.
 | "audit deps", "check dependencies", "outdated", "vulnerabilities" | **`/dep-audit`** | Shell-first dependency audit |
 | "find the todos", "what's left", "todo sweep", "any FIXMEs", "tech debt inventory", "what did we leave unfinished" | **`/todo`** | Whole-repo TODO/FIXME/HACK sweep, aged by git blame, ranked into a worklist |
 | "clean up branches", "delete merged branches", "prune branches", "my branch list is a mess", "which branches can I delete" | **`/branch-cleanup`** | Fetch-prune, then safely delete merged + `[gone]` local branches; protects current/default |
+| "I committed my .env", "stop tracking this file", "shouldn't be in git", "untrack node_modules", "my gitignore isn't working" | **`/untrack`** | Find tracked files that should be ignored (secrets, deps, build output), `git rm --cached` them, add to `.gitignore` — and flag that a leaked secret needs rotation, not just an untrack |
 | "broken", "not working", "was working before", "wtf", "help", frustration + error | **`/unfuck`** | Diagnose and fix |
 | "review paper", "peer review", "is this publishable", shares a .pdf/.tex paper | **`/paper-review`** | IEEE-level peer review |
 | "write a post", "LinkedIn", "blog", "draft", "write like me", "my voice" | **`/pradyoth-writing`** | Ghostwrite in Pradyoth's voice |
