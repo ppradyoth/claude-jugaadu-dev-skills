@@ -24,12 +24,26 @@ fit, pick the most specific one.
 | Signal | Route to | Why |
 |--------|----------|-----|
 | User pastes an error, stack trace, exception | **`/tldr-error`** | They want the fix, not a conversation |
+| User pastes a whole CI/build log, "why did CI fail", "pipeline is red", "the build broke" | **`/triage`** | Find the one real failure in the noise, ranked causes + first command |
 | "commit", "commit this", staged changes exist | **`/lazy-commit`** | One-shot commit |
 | "test this", "write tests", "cover this" | **`/quick-test`** | Generate tests, no chat |
 | "scaffold", "create a new", "boilerplate", "stub out" | **`/scaffold`** | Generate boilerplate from one-liner |
+| "self review", "check before I push", "anything dumb in here", "did I leave anything", "nit" | **`/nit`** | Flag debug leftovers, `.only` tests, merge markers, stray files — added lines only |
+| "ready to push?", "pre-push", "final check", "ship check", "am I good to push" | **`/pre-push`** | One go/no-go gate: /nit → /secure-diff → tests, fail-fast, single verdict |
 | "PR", "pull request", "pr desc", "create pr" | **`/pr-desc`** | PR title + description from diff |
+| "orient me", "what is this repo", "understand this codebase", "just cloned this", "where do I start", "lay of the land", "onboard me" | **`/orient`** | One-screen repo map: what/run/test/layout, before you spelunk |
 | "rename", "refactor name", "change name" | **`/rename-symbol`** | Scope-aware rename across files |
 | "audit deps", "check dependencies", "outdated", "vulnerabilities" | **`/dep-audit`** | Shell-first dependency audit |
+| "find the todos", "what's left", "todo sweep", "any FIXMEs", "tech debt inventory", "what did we leave unfinished" | **`/todo`** | Whole-repo TODO/FIXME/HACK sweep, aged by git blame, ranked into a worklist |
+| "clean up branches", "delete merged branches", "prune branches", "my branch list is a mess", "which branches can I delete" | **`/branch-cleanup`** | Fetch-prune, then safely delete merged + `[gone]` local branches; protects current/default |
+| "I committed my .env", "stop tracking this file", "shouldn't be in git", "untrack node_modules", "my gitignore isn't working" | **`/untrack`** | Find tracked files that should be ignored (secrets, deps, build output), `git rm --cached` them, add to `.gitignore` — and flag that a leaked secret needs rotation, not just an untrack |
+| "fix a bug on main but I'm mid-feature", "check out that branch without stashing", "review this PR without losing my place", "run two branches at once", "hotfix without touching my WIP" | **`/worktree`** | Add a linked `git worktree` — a second working dir on the same repo with another branch checked out — so the current one stays untouched; clean up with `git worktree remove` |
+| "stash this", "save my changes for a sec", "park this and come back", "pop my stash", "get my stashed work back", "shelve this without committing", "I stashed something and can't find it" | **`/stash`** | Shelve WIP with `git stash push` (add `-u` for untracked), restore with `pop`/`apply`; knows the untracked-skip trap, that a conflicted pop keeps the stash, the unstaged-on-restore default (`--index`), and `git stash branch` when the base moved |
+| "app won't start after I pulled", "what env vars am I missing", "check my .env", "why is this config undefined", "compare my env to the example" | **`/env-check`** | Diff `.env.example` (and the vars the code actually reads) against your real `.env`; report missing/undeclared/stale keys — names only, never values |
+| "revert that commit", "undo the deploy", "back out that change", "roll it back, it's pushed", "revert the merge", "undo it but others have it" | **`/revert`** | Back out an already-pushed commit with `git revert` (a new inverse commit, no history rewrite, no force-push); handles the merge-commit `-m` case and the re-merge gotcha |
+| "grab that commit", "cherry-pick that fix", "just that one commit on this branch", "backport it", "pull that hotfix into release", "apply that commit here" | **`/cherry-pick`** | Copy one commit onto the current branch with `git cherry-pick` (new SHA = a copy, not a move); knows `-x`, the exclusive `A..B` range, the empty/already-applied case, and the cherry-pick-then-merge duplicate trap |
+| "rebase onto main", "update my branch with main", "my branch is behind", "replay my commits on the latest", "rebase my feature branch", "get main into my branch without a merge commit" | **`/rebase`** | Replay your branch's commits on top of the updated base with `git rebase`; enforces the golden rule (yours-only), the per-commit conflict loop, `--force-with-lease` (never `--force`), and the reversed ours/theirs during replay |
+| "amend that", "add this to the last commit", "I forgot a file", "fix the last commit message", "reword my last commit", "I committed too early", "wrong author on that commit" | **`/amend`** | Fix the *last* commit in place with `git commit --amend` — no "fix typo" commit on top; folds in *staged* changes only, force-with-lease if it's already pushed, `--reset-author` for a wrong identity; HEAD-only (older commit is `/squash`) |
 | "broken", "not working", "was working before", "wtf", "help", frustration + error | **`/unfuck`** | Diagnose and fix |
 | "review paper", "peer review", "is this publishable", shares a .pdf/.tex paper | **`/paper-review`** | IEEE-level peer review |
 | "write a post", "LinkedIn", "blog", "draft", "write like me", "my voice" | **`/pradyoth-writing`** | Ghostwrite in Pradyoth's voice |
@@ -45,6 +59,7 @@ fit, pick the most specific one.
 | User asks about a job offer, comp package, or counter-offer | **`/harvey-specter`** |
 | User asks to write something public-facing | **`/pradyoth-writing`** |
 | User starts a new file from scratch in an existing project | **`/scaffold`** |
+| User is clearly new to the repo — asks broad "how does this work?" / "where is X?" before any specific task | **`/orient`** (map first) → then the specific skill |
 
 ### Chaining (multiple skills in sequence)
 
@@ -56,8 +71,12 @@ Some tasks need more than one skill. Chain them:
 | "write tests and commit" | **`/quick-test`** → **`/lazy-commit`** |
 | "scaffold a new endpoint with tests" | **`/scaffold`** → **`/quick-test`** |
 | "fix, test, and PR" | **`/unfuck`** → **`/quick-test`** → **`/lazy-commit`** → **`/pr-desc`** |
+| "clean this up and commit" | **`/nit`** (catch leftovers) → **`/secure-diff`** (secrets) → **`/lazy-commit`** |
+| "ready to push?" / "final check before I ship" | **`/pre-push`** (one gate: /nit → /secure-diff → tests) → **`/lazy-commit`** → **`/pr-desc`** |
 | "rename X and make sure nothing broke" | **`/rename-symbol`** → **`/quick-test`** (run existing tests) |
 | "audit and fix deps" | **`/dep-audit`** → **`/unfuck`** (if audit finds breaking issues) |
+| "figure out why CI failed and fix it" | **`/triage`** (find the real failure) → **`/unfuck`** (fix it) |
+| "I just cloned this, help me make a change" | **`/orient`** (map the repo) → **`/explain`** (the entry point) → the task |
 
 When chaining, output a one-line header for each skill as it activates:
 ```
